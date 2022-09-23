@@ -13,8 +13,9 @@ func TestFindFirstPosition(t *testing.T) {
 
 	position := findFirstPosition("i", strings.Split(name, ""))
 
-	if position != -1 {
-		t.Errorf("findFirstPosition i in  = %s; want -1", name)
+	expectedResult := -1
+	if position != expectedResult {
+		t.Errorf("findFirstPosition want %d; get %d", expectedResult, position)
 	}
 }
 
@@ -28,4 +29,16 @@ func TestReplaceInWord(t *testing.T) {
 	if result != expectedResult {
 		t.Errorf("replaceInWord want %s; get %s", expectedResult, result)
 	}
+}
+
+func TestPrepareWord(t *testing.T) {
+	word := "testing"
+
+	result := strings.Join(prepareWord(word), "")
+
+	expectedResult := "t__t__g" // t _  _ t _ _ g
+	if result != expectedResult {
+		t.Errorf("prepareWord want %s; get %s", expectedResult, result)
+	}
+
 }
