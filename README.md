@@ -13,9 +13,9 @@ go run main.go
 
 ## Screenshots
 
-![First screen](https://github.com/nicumicle/gohangman/blob/master/assets/p1.png)
+![First screen](https://github.com/nicumicle/gohangman/blob/main/assets/p1.png)
 
-![User Won](https://github.com/nicumicle/gohangman/blob/master/assets/p2.png)
+![User Won](https://github.com/nicumicle/gohangman/blob/main/assets/p2.png)
 
-![User loses](https://github.com/nicumicle/gohangman/blob/master/assets/p3.png)
+![User loses](https://github.com/nicumicle/gohangman/blob/main/assets/p3.png)
 
