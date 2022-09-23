@@ -73,12 +73,12 @@ func drawHangman(step int) {
 	if step >= 1 {
 		fmt.Print("\t\t\t  0\t\t\t") //head
 	}
-	fmt.Println("\r") //newline
+	fmt.Println("\r") //newline and \r
 	if step >= 2 {
 		fmt.Print("\t\t\t /") //left arm
 	}
 	if step >= 3 {
-		fmt.Print("|") //body arm
+		fmt.Print("|") //body
 	}
 	if step >= 4 {
 		fmt.Print("\\ ") //right arm
