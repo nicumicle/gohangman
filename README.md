@@ -11,6 +11,18 @@ It's a simple terminal game where you need to guess the word.
 go run main.go
 ```
 
+## Run the tests
+
+```
+go test *.go -v
+```
+
+## Build 
+
+```
+go build
+```
+
 ## Screenshots
 
 ![First screen](https://github.com/nicumicle/gohangman/blob/main/screenshots/p1.png)

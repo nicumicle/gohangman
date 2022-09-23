@@ -1,4 +1,4 @@
-package hangman
+package main
 
 import (
 	"fmt"
@@ -33,7 +33,7 @@ func main() {
 
 	tries := max_tries
 
-	wordArray = prepareWord(word)
+	wordArray = PrepareWord(word)
 	for {
 		fmt.Print(colorYellow)
 		fmt.Println("Tries left:", tries)
@@ -55,11 +55,11 @@ func main() {
 		fmt.Print("Add a letter: ")
 		fmt.Scanf("%s", &letter)
 
-		pos := findFirstPosition(letter, strings.Split(word, ""))
+		pos := FindFirstPosition(letter, strings.Split(word, ""))
 		if pos < 0 {
 			tries--
 		} else {
-			wordArray = replaceInWord(letter, strings.Split(word, ""), wordArray)
+			wordArray = ReplaceInWord(letter, strings.Split(word, ""), wordArray)
 		}
 	}
 
@@ -97,7 +97,7 @@ func drawHangman(step int) {
 /*
 	Replace character in word
 */
-func replaceInWord(character string, word []string, array []string) []string {
+func ReplaceInWord(character string, word []string, array []string) []string {
 
 	for i := 0; i < len(word); i++ {
 		if word[i] == character {
@@ -111,7 +111,7 @@ func replaceInWord(character string, word []string, array []string) []string {
 /*
 	Prepare the word for the first display
 */
-func prepareWord(word string) []string {
+func PrepareWord(word string) []string {
 	var result []string
 
 	chars := strings.Split(word, "")
@@ -125,8 +125,8 @@ func prepareWord(word string) []string {
 		}
 
 	}
-	result = replaceInWord(chars[0], chars, result)
-	result = replaceInWord(chars[len(chars)-1], chars, result)
+	result = ReplaceInWord(chars[0], chars, result)
+	result = ReplaceInWord(chars[len(chars)-1], chars, result)
 
 	return result
 }
@@ -134,7 +134,7 @@ func prepareWord(word string) []string {
 /*
 	Finds the position of a character
 */
-func findFirstPosition(character string, myArray []string) int {
+func FindFirstPosition(character string, myArray []string) int {
 	var i int
 	for i = 0; i < len(myArray); i++ {
 		if myArray[i] == character {
